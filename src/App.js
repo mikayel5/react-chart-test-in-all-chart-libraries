@@ -1,83 +1,25 @@
 import React from "react";
 import "./App.css";
-import ChartistGraph from "react-chartist";
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
-  economicChart,
-  dataPie
-} from "./chartits/chartist";
-
-const simpleLineChartData = {
-  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-  series: [
-    [12, 9, 7, 8, 5],
-    [2, 1, 3.5, 7, 3],
-    [1, 3, 4, 5, 6]
-  ]
-};
-
-const speedPieChartData = {
-  series: [20, 10, 30, 40]
-};
-const PieChartOptions = {
-  donut: true,
-  donutWidth: 60,
-  startAngle: 270,
-  total: 200,
-  showLabel: false
-};
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Recharts1 from "./ReCharts/ReCharts1";
+import Recharts2 from "./ReCharts/ReCharts2";
+import Chartist from "./chartits/Chartist";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Recharts2 />
+      <Recharts1 />
       <div>
-        <ChartistGraph data={simpleLineChartData} type={"Line"} />
-        <ChartistGraph
-          data={speedPieChartData}
-          options={PieChartOptions}
-          type={"Pie"}
-        />
-        <ChartistGraph
-          className="ct-chart"
-          data={dailySalesChart.data}
-          type="Line"
-          options={dailySalesChart.options}
-          listener={dailySalesChart.animation}
-        />
-        <ChartistGraph
-          className="ct-chart"
-          data={emailsSubscriptionChart.data}
-          type="Bar"
-          options={emailsSubscriptionChart.options}
-          responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-          listener={emailsSubscriptionChart.animation}
-        />
-        <ChartistGraph
-          className="ct-chart"
-          data={dailySalesChart.data}
-          type="Line"
-          options={dailySalesChart.options}
-          listener={dailySalesChart.animation}
-        />
-        <ChartistGraph
-          className="ct-chart"
-          data={completedTasksChart.data}
-          type="Line"
-          options={completedTasksChart.options}
-          listener={completedTasksChart.animation}
-        />
-        <ChartistGraph
-          className="ct-chart"
-          data={economicChart.data}
-          type="Bar"
-          options={economicChart.options}
-          responsiveOptions={economicChart.responsiveOptions}
-        />
-
-        <ChartistGraph data={dataPie} type="Pie" />
+        <button>but1</button>
       </div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Chartist />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
