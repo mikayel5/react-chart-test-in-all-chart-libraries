@@ -1,6 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ChartistGraph from "react-chartist";
+
+var simpleLineChartData = {
+  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  series: [
+    [12, 9, 7, 8, 5],
+    [2, 1, 3.5, 7, 3],
+    [1, 3, 4, 5, 6]
+  ]
+};
 
 function App() {
   return (
@@ -10,14 +20,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <ChartistGraph data={simpleLineChartData} type={"Line"} />
+        </div>
       </header>
     </div>
   );

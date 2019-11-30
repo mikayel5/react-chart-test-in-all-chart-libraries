@@ -1,12 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+//  import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import ChartistGraph from "react-chartist";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+class Bar extends React.Component {
+  render() {
+    var simpleLineChartData = {
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      series: [
+        [12, 9, 7, 8, 5],
+        [2, 1, 3.5, 7, 3],
+        [1, 3, 4, 5, 6]
+      ]
+    };
+
+    //var type = "Bar";
+
+    return (
+      <div>
+        <ChartistGraph data={simpleLineChartData} type={"Line"} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Bar />, document.body);
+
 serviceWorker.unregister();
