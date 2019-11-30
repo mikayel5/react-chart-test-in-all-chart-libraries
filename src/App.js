@@ -1,9 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import ChartistGraph from "react-chartist";
+import {
+  dailySalesChart,
+  emailsSubscriptionChart,
+  completedTasksChart,
+  economicChart,
+  dataPie
+} from "./chartits/chartist";
 
-var simpleLineChartData = {
+const simpleLineChartData = {
   labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   series: [
     [12, 9, 7, 8, 5],
@@ -12,18 +18,66 @@ var simpleLineChartData = {
   ]
 };
 
+const speedPieChartData = {
+  series: [20, 10, 30, 40]
+};
+const PieChartOptions = {
+  donut: true,
+  donutWidth: 60,
+  startAngle: 270,
+  total: 200,
+  showLabel: false
+};
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          <ChartistGraph data={simpleLineChartData} type={"Line"} />
-        </div>
-      </header>
+      <div>
+        <ChartistGraph data={simpleLineChartData} type={"Line"} />
+        <ChartistGraph
+          data={speedPieChartData}
+          options={PieChartOptions}
+          type={"Pie"}
+        />
+        <ChartistGraph
+          className="ct-chart"
+          data={dailySalesChart.data}
+          type="Line"
+          options={dailySalesChart.options}
+          listener={dailySalesChart.animation}
+        />
+        <ChartistGraph
+          className="ct-chart"
+          data={emailsSubscriptionChart.data}
+          type="Bar"
+          options={emailsSubscriptionChart.options}
+          responsiveOptions={emailsSubscriptionChart.responsiveOptions}
+          listener={emailsSubscriptionChart.animation}
+        />
+        <ChartistGraph
+          className="ct-chart"
+          data={dailySalesChart.data}
+          type="Line"
+          options={dailySalesChart.options}
+          listener={dailySalesChart.animation}
+        />
+        <ChartistGraph
+          className="ct-chart"
+          data={completedTasksChart.data}
+          type="Line"
+          options={completedTasksChart.options}
+          listener={completedTasksChart.animation}
+        />
+        <ChartistGraph
+          className="ct-chart"
+          data={economicChart.data}
+          type="Bar"
+          options={economicChart.options}
+          responsiveOptions={economicChart.responsiveOptions}
+        />
+
+        <ChartistGraph data={dataPie} type="Pie" />
+      </div>
     </div>
   );
 }
