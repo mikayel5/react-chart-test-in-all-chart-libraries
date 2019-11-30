@@ -1,9 +1,9 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
 import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
+  //dailySalesChart,
+  //emailsSubscriptionChart,
+  //completedTasksChart,
   economicChart,
   dataPie
 } from "./charts";
@@ -39,35 +39,35 @@ export default function Chartist() {
           options={PieChartOptions}
           type={"Pie"}
         />
-        <ChartistGraph
+        {/* <ChartistGraph
           className="ct-chart"
           data={dailySalesChart.data}
           type="Line"
           options={dailySalesChart.options}
           listener={dailySalesChart.animation}
-        />
-        <ChartistGraph
+        /> */}
+        {/* <ChartistGraph
           className="ct-chart"
           data={emailsSubscriptionChart.data}
           type="Bar"
           options={emailsSubscriptionChart.options}
           responsiveOptions={emailsSubscriptionChart.responsiveOptions}
           listener={emailsSubscriptionChart.animation}
-        />
-        <ChartistGraph
+        /> */}
+        {/* <ChartistGraph
           className="ct-chart"
           data={dailySalesChart.data}
           type="Line"
           options={dailySalesChart.options}
           listener={dailySalesChart.animation}
-        />
-        <ChartistGraph
+        /> */}
+        {/* <ChartistGraph
           className="ct-chart"
           data={completedTasksChart.data}
           type="Line"
           options={completedTasksChart.options}
           listener={completedTasksChart.animation}
-        />
+        /> */}
         <ChartistGraph
           className="ct-chart"
           data={economicChart.data}

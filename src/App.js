@@ -3,11 +3,13 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Recharts1 from "./ReCharts/ReCharts1";
 import Recharts2 from "./ReCharts/ReCharts2";
+import Recharts3 from "./ReCharts/ReCharts3";
 import Chartist from "./chartits/Chartist";
 
 function App() {
   return (
     <div>
+      <Recharts3 />
       <Recharts2 />
       <Recharts1 />
       <div>
