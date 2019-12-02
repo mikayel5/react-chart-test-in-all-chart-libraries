@@ -74,6 +74,13 @@ export default function Recharts1() {
       <Legend />
       <Line type="monotone" dataKey="pv" stroke="red" activeDot={{ r: 8 }} />
       <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+      <Line
+        type="monotone"
+        dataKey="amt"
+        stroke="blue"
+        strokeWidth="4"
+        activeDot={{ r: 8 }}
+      />
     </LineChart>
   );
 }

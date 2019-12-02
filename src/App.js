@@ -9,9 +9,10 @@ import Chartist from "./chartits/Chartist";
 function App() {
   return (
     <div>
+      <Recharts1 />
       <Recharts3 />
       <Recharts2 />
-      <Recharts1 />
+
       <div>
         <button>but1</button>
       </div>
