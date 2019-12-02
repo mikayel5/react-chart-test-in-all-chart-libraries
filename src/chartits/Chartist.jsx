@@ -1,4 +1,5 @@
 import React from "react";
+import "./chartist.css";
 import ChartistGraph from "react-chartist";
 import {
   //dailySalesChart,
