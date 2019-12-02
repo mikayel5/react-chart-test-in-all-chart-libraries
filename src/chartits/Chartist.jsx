@@ -2,8 +2,8 @@ import React from "react";
 import "./chartist.css";
 import ChartistGraph from "react-chartist";
 import {
-  //dailySalesChart,
-  //emailsSubscriptionChart,
+  dailySalesChart,
+  emailsSubscriptionChart,
   //completedTasksChart,
   economicChart,
   dataPie
@@ -33,28 +33,32 @@ export default function Chartist() {
   return (
     <div className="App">
       <div>
-        <ChartistGraph data={dataPie} type="Pie" />
-        <ChartistGraph data={simpleLineChartData} type={"Line"} />
+        <ChartistGraph data={dataPie} type="Pie" className="chart1" />
+        <ChartistGraph
+          className="chart2"
+          data={simpleLineChartData}
+          type={"Line"}
+        />
         <ChartistGraph
           data={speedPieChartData}
           options={PieChartOptions}
           type={"Pie"}
         />
-        {/* <ChartistGraph
+        <ChartistGraph
           className="ct-chart"
           data={dailySalesChart.data}
           type="Line"
           options={dailySalesChart.options}
           listener={dailySalesChart.animation}
-        /> */}
-        {/* <ChartistGraph
+        />
+        <ChartistGraph
           className="ct-chart"
           data={emailsSubscriptionChart.data}
           type="Bar"
           options={emailsSubscriptionChart.options}
           responsiveOptions={emailsSubscriptionChart.responsiveOptions}
           listener={emailsSubscriptionChart.animation}
-        /> */}
+        />
         {/* <ChartistGraph
           className="ct-chart"
           data={dailySalesChart.data}
@@ -76,6 +80,7 @@ export default function Chartist() {
           options={economicChart.options}
           responsiveOptions={economicChart.responsiveOptions}
         />
+        <ChartistGraph data={dataPie} type="Pie" className="chart5" />
       </div>
     </div>
   );
